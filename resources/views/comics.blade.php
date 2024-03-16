@@ -3,14 +3,16 @@
 @section('page-title', 'COMICS')
 
 @section('main-content')
-    <div class="row">
-        @foreach ($comics as $comic)
-            <div class="col-2">
-                <div class="thumb">
-                    <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+    <div class="container">
+        <div class="row">
+            @foreach ($comics as $comic)
+                <div class="col-2">
+                    <div class="thumb">
+                        <img src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}">
+                    </div>
+                    {{ $comic['series'] }}
                 </div>
-                {{ $comic['title'] }}
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 @endsection
