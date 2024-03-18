@@ -20,7 +20,11 @@
                 <li @class(['active' => Route::currentRouteName() == 'characters'])>
                     <a href="{{ route('characters') }}">CHARACTERS</a>
                 </li>
-                <li @class(['active' => Route::currentRouteName() == 'comics'])>
+                <li @class([
+                    'active' =>
+                        Route::currentRouteName() == 'comics' ||
+                        Route::currentRouteName() == 'comic-detail',
+                ])>
                     <a href="{{ route('comics') }}">COMICS</a>
                 </li>
                 <li @class(['active' => Route::currentRouteName() == 'movies'])>
