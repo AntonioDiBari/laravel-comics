@@ -6,11 +6,13 @@
     <section class="comics pt-5">
         <div class="container">
             <div class="row">
-                @foreach ($comics as $comic)
+                @foreach ($comics as $index => $comic)
                     <div class="col-2">
-                        <div class="thumb">
-                            <img src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}">
-                        </div>
+                        <a href="{{ route('comic-detail', ['index' => $index]) }}">
+                            <div class="thumb">
+                                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['series'] }}">
+                            </div>
+                        </a>
                         {{ $comic['series'] }}
                     </div>
                 @endforeach

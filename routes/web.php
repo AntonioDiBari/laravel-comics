@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,43 +14,41 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  $comics = config('comics');
-  return view('comics', compact('comics'));
-})->name('comics');
+Route::get('/', [PageController::class, 'index'])->name('comics');
+Route::get('/comic-detail/{index}', [PageController::class, 'comicDetail'])->name('comic-detail');
 
 Route::get('/characters', function () {
-  return view('characters');
+  return view('pages.characters');
 })->name('characters');
 
 Route::get('/movies', function () {
-  return view('movies');
+  return view('pages.movies');
 })->name('movies');
 
 Route::get('/tv', function () {
-  return view('tv');
+  return view('pages.tv');
 })->name('tv');
 
 Route::get('/games', function () {
-  return view('games');
+  return view('pages.games');
 })->name('games');
 
 Route::get('/collectibles', function () {
-  return view('collectibles');
+  return view('pages.collectibles');
 })->name('collectibles');
 
 Route::get('/videos', function () {
-  return view('videos');
+  return view('pages.videos');
 })->name('videos');
 
 Route::get('/fans', function () {
-  return view('fans');
+  return view('pages.fans');
 })->name('fans');
 
 Route::get('/news', function () {
-  return view('news');
+  return view('pages.news');
 })->name('news');
 
 Route::get('/shop', function () {
-  return view('shop');
+  return view('pages.shop');
 })->name('shop');
